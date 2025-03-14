@@ -153,11 +153,15 @@ app.get("/getAQI", async (req, res) => {
 const PORT = 3000;
 // const HOST = "172.27.173.43";
 
-const options = {
-  key: fs.readFileSync("./cert/cert.key"),
-  cert: fs.readFileSync("./cert/cert.crt"),
-};
+// const options = {
+//   key: fs.readFileSync("./cert/cert.key"),
+//   cert: fs.readFileSync("./cert/cert.crt"),
+// };
 
-https.createServer(options, app).listen(PORT, () => {
+https.createServer(app).listen(PORT, () => {
   // console.log(`HTTPS Server running at https://${HOST}:${PORT}`);
 });
+
+// https.createServer(options, app).listen(PORT, () => {
+//   // console.log(`HTTPS Server running at https://${HOST}:${PORT}`);
+// });
